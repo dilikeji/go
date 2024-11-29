@@ -14,11 +14,11 @@ func main() {
 	s := g.Server()
 	s.Use(GlobalMiddleware)
 	SetApiRoute(s)
-	s.EnableAdmin()
+	s.EnableAdmin() // 开启管理 可热重载
 	s.Run()
 }
 
-// GlobalMiddleware 全局中间件
+// GlobalMiddleware 中间件
 func GlobalMiddleware(gReq *ghttp.Request) {
 	var (
 		err        error
@@ -60,6 +60,7 @@ func GlobalMiddleware(gReq *ghttp.Request) {
 	g.Log().Info(gReq.Context(), "After Request")
 }
 
+// SetApiRoute 配置路由
 func SetApiRoute(s *ghttp.Server) {
 	s.Group("v1/api", func(group *ghttp.RouterGroup) {
 		group.GET("login", App.Login)
