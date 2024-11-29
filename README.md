@@ -1,25 +1,38 @@
 # go小店
 
-#### 介绍
+## 介绍
 golang语言的商店后端
 
-#### 软件架构
+## 软件架构
 软件架构说明
 
 
-#### 安装教程
+## 安装教程
+
+#### 安装依赖
+```shell
+go mod tidy
+```
+#### 运行
+```shell
+go run main.go
+```
+#### 编译
+```shell
+go build -o go-shop main.go 
+```
+#### 跨平台编译 Mac编译Linux
+```shell
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o go-shop main.go;
+```
+
+## 使用说明
 
 1.  xxxx
 2.  xxxx
 3.  xxxx
 
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
+## 参与贡献
 
 1.  Fork 本仓库
 2.  新建 Feat_xxx 分支
@@ -27,7 +40,7 @@ golang语言的商店后端
 4.  新建 Pull Request
 
 
-#### 特技
+## 特技
 
 1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
 2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
